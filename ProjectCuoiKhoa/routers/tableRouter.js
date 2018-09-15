@@ -10,9 +10,9 @@ tableRouter.use('/', (req, res, next) => {
 
 tableRouter.post('/', (req, res) => {
     try {
-        const { tableNumber, price, status } = req.body;
+        const { url ,tableNumber, price, status } = req.body;
         TableModel.create(
-            { tableNumber, price, status },
+            {url, tableNumber, price, status },
             (error, tableCreated) => {
                 if (error) res.status(500).send({ success: 0, error })
                 else res.status(200).send({ success: 1, tableCreated })

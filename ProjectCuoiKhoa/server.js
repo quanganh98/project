@@ -32,10 +32,10 @@ mongoose.connect("mongodb://balo11044:nblong1997@ds145072.mlab.com:45072/quanlyn
 
 app.use('/api', apiRouter)
 
-app.use(express.static('./public'));
+app.use(express.static('./build'));
 
 app.get("/", (req, res) => {
-    res.sendFile('./public/index.html')
+    res.sendFile('./build/index.html')
 })
 
 const port = 5050

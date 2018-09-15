@@ -28,9 +28,9 @@ menuRouter.get('/:menuId', async (req, res) => {
 })
 
 menuRouter.post('/', (req, res) => {
-    const { category, name, imageUrl, price, state } = req.body;
+    const { type, name, imageUrl, price, state } = req.body;
     MenuModel.create(
-        { category, name, imageUrl, price, state },
+        { type, name, imageUrl, price, state },
         (error, menuCreated) => {
             if (error) res.status(500).send({ success: 0, error })
             else res.status(200).send({ success: 1, menuCreated })
